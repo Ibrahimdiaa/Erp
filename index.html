@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>مجمّع السرايا الفاخر</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --burgundy: #7b1b36;
+      --burgundy-dark: #5e1428;
+    }
+    * { font-family: 'Cairo', system-ui, -apple-system, sans-serif; }
+    .glass {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(12px);
+    }
+    .shine {
+      position: relative;
+      overflow: hidden;
+    }
+    .shine::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, transparent, rgba(255,255,255,0.14), transparent);
+      transform: translateX(-120%);
+      animation: shine 4s ease-in-out infinite;
+    }
+    @keyframes shine {
+      0% { transform: translateX(-120%); }
+      50% { transform: translateX(120%); }
+      100% { transform: translateX(120%); }
+    }
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+      100% { transform: translateY(0); }
+    }
+    .float {
+      animation: float 5s ease-in-out infinite;
+    }
+  </style>
+</head>
+<body class="bg-slate-950 text-white">
+  <div class="relative min-h-screen overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-[var(--burgundy)] via-slate-950 to-slate-900"></div>
+    <div class="absolute -left-20 -top-32 h-72 w-72 rounded-full bg-[var(--burgundy)] blur-3xl opacity-40"></div>
+    <div class="absolute right-10 top-16 h-56 w-56 rounded-full bg-white blur-3xl opacity-10"></div>
+
+    <header class="relative z-10 flex items-center justify-between px-6 py-5 lg:px-16">
+      <div class="flex items-center gap-3">
+        <div class="h-12 w-12 rounded-2xl bg-white/10 ring-2 ring-white/30 flex items-center justify-center text-2xl font-black text-white">س</div>
+        <div>
+          <p class="text-sm text-white/70">مجمّع</p>
+          <p class="text-xl font-bold tracking-wider">السرايا الفاخر</p>
+        </div>
+      </div>
+      <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-white/80">
+        <a href="#luxury" class="hover:text-white transition">العلامة</a>
+        <a href="#projects" class="hover:text-white transition">المشاريع</a>
+        <a href="#amenities" class="hover:text-white transition">المزايا</a>
+        <a href="#contact" class="px-4 py-2 rounded-full bg-white text-[var(--burgundy)] font-bold shadow-lg hover:shadow-[0_15px_35px_rgba(123,27,54,0.35)] transition">احجز زيارة</a>
+      </nav>
+    </header>
+
+    <main class="relative z-10">
+      <section id="luxury" class="px-6 lg:px-16 pb-16 pt-6 grid lg:grid-cols-2 gap-10 items-center">
+        <div class="space-y-8">
+          <p class="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white/70">إطلاق حصري</p>
+          <div class="space-y-4">
+            <h1 class="text-4xl lg:text-6xl font-black leading-tight">
+              حيث يلتقي <span class="text-white/70">الفخامة</span> مع <span class="text-[var(--burgundy)]">الهدوء</span>
+            </h1>
+            <p class="text-lg text-white/70 max-w-2xl leading-relaxed">
+              مجموعة من الفلل والبنتهاوس المصمّمة بلمسات أوروبية، بإطلالات بانورامية على الحدائق والمسطحات المائية، وتجربة معيشية تُضاهي الفنادق الخمس نجوم.
+            </p>
+          </div>
+          <div class="flex flex-wrap gap-4">
+            <button class="shine rounded-full bg-[var(--burgundy)] px-6 py-3 text-sm font-bold shadow-[0_20px_40px_rgba(123,27,54,0.45)] hover:scale-105 transition">استكشف التصاميم</button>
+            <button class="rounded-full border border-white/25 px-6 py-3 text-sm font-bold hover:bg-white/10 transition">حمّل البروشور</button>
+          </div>
+          <div class="grid grid-cols-3 gap-6 text-center">
+            <div class="glass rounded-2xl p-4 shine">
+              <p class="text-3xl font-black">+75</p>
+              <p class="text-sm text-white/70">فيلا خاصة</p>
+            </div>
+            <div class="glass rounded-2xl p-4 shine">
+              <p class="text-3xl font-black">4</p>
+              <p class="text-sm text-white/70">بحيرات اصطناعية</p>
+            </div>
+            <div class="glass rounded-2xl p-4 shine">
+              <p class="text-3xl font-black">24/7</p>
+              <p class="text-sm text-white/70">خدمة كونسييرج</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="relative h-full">
+          <div class="glass rounded-[32px] border-white/30 p-6 shadow-2xl shadow-[var(--burgundy)]/20">
+            <div class="relative overflow-hidden rounded-3xl">
+              <img id="hero-image" src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1400&q=80" class="h-[420px] w-full object-cover transition duration-700" alt="فيلا فاخرة" />
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-slate-950/10 to-transparent"></div>
+              <div class="absolute bottom-6 right-6 flex items-center gap-3">
+                <div class="h-12 w-12 rounded-full bg-white/15 backdrop-blur text-center leading-[3rem] text-xl font-black">★</div>
+                <div>
+                  <p class="font-bold">إطلالات بانورامية</p>
+                  <p class="text-xs text-white/70">أفق المدينة والبحيرة</p>
+                </div>
+              </div>
+            </div>
+            <div class="mt-6 grid grid-cols-3 gap-4">
+              <button class="thumb active border-2 border-[var(--burgundy)] overflow-hidden rounded-2xl transition focus:outline-none" data-img="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1400&q=80">
+                <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=400&q=60" class="w-full h-20 object-cover" alt="فيلا" />
+              </button>
+              <button class="thumb border border-white/20 overflow-hidden rounded-2xl transition focus:outline-none" data-img="https://images.unsplash.com/photo-1505691390986-5c5c6c6dfdbe?auto=format&fit=crop&w=1400&q=80">
+                <img src="https://images.unsplash.com/photo-1505691390986-5c5c6c6dfdbe?auto=format&fit=crop&w=400&q=60" class="w-full h-20 object-cover" alt="حديقة" />
+              </button>
+              <button class="thumb border border-white/20 overflow-hidden rounded-2xl transition focus:outline-none" data-img="https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?auto=format&fit=crop&w=1400&q=80">
+                <img src="https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?auto=format&fit=crop&w=400&q=60" class="w-full h-20 object-cover" alt="صالة" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="px-6 lg:px-16 pb-16">
+        <div class="flex items-center justify-between mb-8">
+          <div>
+            <p class="text-sm text-[var(--burgundy)] font-semibold">عقارات مميزة</p>
+            <h2 class="text-3xl font-black">مشاريع تُنطق بالفخامة</h2>
+          </div>
+          <p class="text-white/70 text-sm max-w-xl">اختيارات منتقاة تجمع بين التصميم المعماري العصري، المساحات الواسعة، والخدمات المخصصة لضيوف النخبة.</p>
+        </div>
+        <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+          <div class="glass rounded-3xl p-4 hover:-translate-y-2 transition shadow-xl">
+            <div class="relative overflow-hidden rounded-2xl h-52">
+              <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=900&q=80" class="h-full w-full object-cover" alt="فلل جولد"> 
+              <span class="absolute top-4 left-4 rounded-full bg-white/20 px-3 py-1 text-xs font-bold">جاهز للتسليم</span>
+            </div>
+            <div class="mt-4 space-y-3">
+              <div class="flex items-center justify-between">
+                <h3 class="text-xl font-bold">فلل جولد سيغنتشر</h3>
+                <span class="text-sm text-[var(--burgundy)] font-extrabold">1.8M $</span>
+              </div>
+              <p class="text-white/70 text-sm">ثلاثة طوابق بارتفاعات شفافة، مسابح داخلية وخارجية، ونظام تحكم ذكي كامل.</p>
+              <div class="flex items-center gap-4 text-xs text-white/60">
+                <span>٤ غرف ماستر</span>
+                <span>مساحة ٨٢٠ م²</span>
+                <span>موقفين</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass rounded-3xl p-4 hover:-translate-y-2 transition shadow-xl">
+            <div class="relative overflow-hidden rounded-2xl h-52">
+              <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=900&q=80" class="h-full w-full object-cover" alt="بنتهاوس مارينا"> 
+              <span class="absolute top-4 left-4 rounded-full bg-white/20 px-3 py-1 text-xs font-bold">عرض حصري</span>
+            </div>
+            <div class="mt-4 space-y-3">
+              <div class="flex items-center justify-between">
+                <h3 class="text-xl font-bold">بنتهاوس مارينا سكاي</h3>
+                <span class="text-sm text-[var(--burgundy)] font-extrabold">2.4M $</span>
+              </div>
+              <p class="text-white/70 text-sm">سطح خاص بإطلالة 360°، مصعد خاص، وشرفة سماوية مع حوض جاكوزي.</p>
+              <div class="flex items-center gap-4 text-xs text-white/60">
+                <span>٥ غرف</span>
+                <span>مساحة ١١٠٠ م²</span>
+                <span>خدمة فندقية</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass rounded-3xl p-4 hover:-translate-y-2 transition shadow-xl">
+            <div class="relative overflow-hidden rounded-2xl h-52">
+              <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=900&q=80" class="h-full w-full object-cover" alt="قصور"> 
+              <span class="absolute top-4 left-4 rounded-full bg-white/20 px-3 py-1 text-xs font-bold">استثمار</span>
+            </div>
+            <div class="mt-4 space-y-3">
+              <div class="flex items-center justify-between">
+                <h3 class="text-xl font-bold">قصور الحديقة الملكية</h3>
+                <span class="text-sm text-[var(--burgundy)] font-extrabold">3.6M $</span>
+              </div>
+              <p class="text-white/70 text-sm">أجنحة استقبال فخمة بارتفاع مزدوج، حدائق خاصة، ونفق مباشر لنادي الأعضاء.</p>
+              <div class="flex items-center gap-4 text-xs text-white/60">
+                <span>٦ أجنحة</span>
+                <span>مساحة ١٥٠٠ م²</span>
+                <span>كراج ذكي</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="amenities" class="px-6 lg:px-16 pb-16">
+        <div class="grid lg:grid-cols-2 gap-10 items-center">
+          <div class="space-y-4">
+            <p class="text-sm text-[var(--burgundy)] font-semibold">أسلوب حياة متكامل</p>
+            <h2 class="text-3xl font-black">تجارب مخصّصة للنخبة</h2>
+            <p class="text-white/70 leading-relaxed">خدمات مدروسة بعناية من لحظة وصولك، مع فريق ضيافة متفرّغ، ونوادٍ حصرية، ومساحات رفاهية لا مثيل لها.</p>
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div class="glass rounded-2xl p-4 flex items-start gap-3">
+                <div class="h-10 w-10 rounded-full bg-[var(--burgundy)]/60 flex items-center justify-center text-lg font-black">∞</div>
+                <div>
+                  <p class="font-bold">سبا وساونا خاصة</p>
+                  <p class="text-xs text-white/60">جلسات عافية مع معالجين عالميين.</p>
+                </div>
+              </div>
+              <div class="glass rounded-2xl p-4 flex items-start gap-3">
+                <div class="h-10 w-10 rounded-full bg-[var(--burgundy)]/60 flex items-center justify-center text-lg font-black">✈</div>
+                <div>
+                  <p class="font-bold">خدمة نقل فاخرة</p>
+                  <p class="text-xs text-white/60">طائرات هليكوبتر وسيارات ليموزين.</p>
+                </div>
+              </div>
+              <div class="glass rounded-2xl p-4 flex items-start gap-3">
+                <div class="h-10 w-10 rounded-full bg-[var(--burgundy)]/60 flex items-center justify-center text-lg font-black">✓</div>
+                <div>
+                  <p class="font-bold">حراسة مشددة</p>
+                  <p class="text-xs text-white/60">أنظمة أمنية مع تقنيات تعرّف ذكية.</p>
+                </div>
+              </div>
+              <div class="glass rounded-2xl p-4 flex items-start gap-3">
+                <div class="h-10 w-10 rounded-full bg-[var(--burgundy)]/60 flex items-center justify-center text-lg font-black">☕</div>
+                <div>
+                  <p class="font-bold">لاونج كبار الشخصيات</p>
+                  <p class="text-xs text-white/60">جلسات خاصة للتفاوض والاستقبال.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass rounded-[28px] border-white/25 p-6 shadow-2xl">
+            <p class="text-sm text-white/70 mb-4">تجربة ضيافة 24/7</p>
+            <div class="grid grid-cols-2 gap-4">
+              <div class="rounded-2xl overflow-hidden h-40 float">
+                <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover" alt="مسبح" />
+              </div>
+              <div class="rounded-2xl overflow-hidden h-40 float" style="animation-delay:1s;">
+                <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover" alt="صالة" />
+              </div>
+              <div class="rounded-2xl overflow-hidden h-40 float" style="animation-delay:2s;">
+                <img src="https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover" alt="غرفة" />
+              </div>
+              <div class="rounded-2xl overflow-hidden h-40 float" style="animation-delay:1.5s;">
+                <img src="https://images.unsplash.com/photo-1505691390986-5c5c6c6dfdbe?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover" alt="حديقة" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="px-6 lg:px-16 pb-20">
+        <div class="glass rounded-[32px] p-8 lg:p-12 flex flex-col lg:flex-row gap-10 items-center">
+          <div class="flex-1 space-y-3">
+            <p class="text-sm text-[var(--burgundy)] font-semibold">وعدنا</p>
+            <h3 class="text-3xl font-black">كل تفصيلة مصمّمة لتبهرك</h3>
+            <p class="text-white/70 leading-relaxed">شراكات مع دور تصميم عالمية، إشراف فني على التنفيذ، وضمان جودة يمتد لعشر سنوات على الهيكل والواجهات.</p>
+            <div class="flex flex-wrap gap-4 text-sm text-white/70">
+              <span class="px-3 py-2 rounded-full bg-white/10 border border-white/10">ضمان صيانة</span>
+              <span class="px-3 py-2 rounded-full bg-white/10 border border-white/10">خدمة تأجير</span>
+              <span class="px-3 py-2 rounded-full bg-white/10 border border-white/10">برنامج استضافة</span>
+              <span class="px-3 py-2 rounded-full bg-white/10 border border-white/10">تصميم مخصص</span>
+            </div>
+          </div>
+          <div class="flex-1 w-full">
+            <form id="contact" class="space-y-4">
+              <div class="grid md:grid-cols-2 gap-4">
+                <div>
+                  <label class="text-sm text-white/70">الاسم الكامل</label>
+                  <input type="text" class="mt-2 w-full rounded-2xl bg-white/5 border border-white/15 px-4 py-3 focus:border-[var(--burgundy)] outline-none" placeholder="أدخل اسمك" />
+                </div>
+                <div>
+                  <label class="text-sm text-white/70">رقم الهاتف</label>
+                  <input type="tel" class="mt-2 w-full rounded-2xl bg-white/5 border border-white/15 px-4 py-3 focus:border-[var(--burgundy)] outline-none" placeholder="05XXXXXXXX" />
+                </div>
+              </div>
+              <div>
+                <label class="text-sm text-white/70">نوع العقار</label>
+                <select class="mt-2 w-full rounded-2xl bg-white/5 border border-white/15 px-4 py-3 focus:border-[var(--burgundy)] outline-none">
+                  <option>فيلا خاصة</option>
+                  <option>بنتهاوس</option>
+                  <option>قصر وحديقة</option>
+                  <option>استثمار فندقي</option>
+                </select>
+              </div>
+              <div>
+                <label class="text-sm text-white/70">رسالتك</label>
+                <textarea rows="3" class="mt-2 w-full rounded-2xl bg-white/5 border border-white/15 px-4 py-3 focus:border-[var(--burgundy)] outline-none" placeholder="أخبرنا بما تبحث عنه"></textarea>
+              </div>
+              <div class="flex flex-col sm:flex-row gap-3 sm:items-center justify-between">
+                <div class="flex items-center gap-2 text-white/70 text-sm">
+                  <span class="h-4 w-4 rounded-full bg-[var(--burgundy)] block"></span>
+                  <p>يردّ عليك مستشار عقاري خلال 30 دقيقة</p>
+                </div>
+                <button type="button" id="cta" class="shine rounded-full bg-[var(--burgundy)] px-6 py-3 text-sm font-bold shadow-[0_20px_40px_rgba(123,27,54,0.45)] hover:scale-105 transition">أرسل طلبي الآن</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="relative z-10 px-6 lg:px-16 pb-10 text-sm text-white/60 flex flex-col md:flex-row md:items-center justify-between gap-3">
+      <p>© 2024 السرايا العقارية. كل الحقوق محفوظة.</p>
+      <div class="flex gap-4">
+        <a href="#" class="hover:text-white">إنستغرام</a>
+        <a href="#" class="hover:text-white">لينكدإن</a>
+        <a href="#" class="hover:text-white">يوتيوب</a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    const heroImage = document.getElementById('hero-image');
+    const thumbs = document.querySelectorAll('.thumb');
+    thumbs.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const img = btn.getAttribute('data-img');
+        heroImage.style.opacity = '0';
+        setTimeout(() => {
+          heroImage.src = img;
+          heroImage.style.opacity = '1';
+        }, 250);
+        thumbs.forEach(el => el.classList.remove('active', 'border-2', 'border-[var(--burgundy)]'));
+        btn.classList.add('active', 'border-2', 'border-[var(--burgundy)]');
+      });
+    });
+
+    const cta = document.getElementById('cta');
+    cta.addEventListener('click', () => {
+      cta.textContent = 'تم استلام طلبك ✨';
+      cta.classList.add('scale-105');
+      setTimeout(() => cta.textContent = 'أرسل طلبي الآن', 2500);
+    });
+  </script>
+</body>
+</html>
