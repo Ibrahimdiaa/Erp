@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Heimon ERP | منصة إدارة شركة الوقود</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <div class="hero__content">
+        <span class="hero__tag">Heimon ERP</span>
+        <h1>منصة إدارة متكاملة لشركة الوقود الكبرى</h1>
+        <p>
+          تحكم كامل في العمليات، الأسطول، التموين، المالية، وإدارة الصلاحيات
+          عبر مركز قيادة واحد.
+        </p>
+        <div class="hero__actions">
+          <button class="primary" id="openLogin">تسجيل الدخول</button>
+          <button class="ghost" id="openDemo">عرض تجريبي</button>
+        </div>
+        <div class="hero__cards">
+          <div class="card">
+            <h3>مؤشرات لحظية</h3>
+            <p>لوحة مؤشرات دقيقة لأداء الأسطول والمخزون والبيع.</p>
+          </div>
+          <div class="card">
+            <h3>صلاحيات متعددة</h3>
+            <p>إدارة مستخدمين وأدوار على مستوى الفروع والإدارات.</p>
+          </div>
+          <div class="card">
+            <h3>تكامل شامل</h3>
+            <p>ربط العمليات المالية واللوجستية في مكان واحد.</p>
+          </div>
+        </div>
+      </div>
+      <div class="hero__panel">
+        <div class="panel__header">
+          <h2>مركز القيادة</h2>
+          <span class="status">نشط</span>
+        </div>
+        <div class="panel__stats">
+          <div>
+            <span>مخزون آمن</span>
+            <strong>92%</strong>
+          </div>
+          <div>
+            <span>تغطية الأسطول</span>
+            <strong>87%</strong>
+          </div>
+          <div>
+            <span>طلبات اليوم</span>
+            <strong>124</strong>
+          </div>
+        </div>
+        <div class="panel__timeline">
+          <div class="timeline__item">
+            <span>06:30</span>
+            <p>خطة تحميل جديدة لمستودع القاهرة.</p>
+          </div>
+          <div class="timeline__item">
+            <span>08:15</span>
+            <p>مطابقة مالية للعميل الحكومي رقم 221.</p>
+          </div>
+          <div class="timeline__item">
+            <span>10:00</span>
+            <p>تنبيه صيانة وقائية لأسطول الصعيد.</p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="section" id="departments">
+        <div class="section__title">
+          <h2>الأقسام التشغيلية المتكاملة</h2>
+          <p>نظام ERP شامل يغطي كل وحدات شركة الوقود.</p>
+        </div>
+        <div class="grid" id="sectionsGrid"></div>
+      </section>
+
+      <section class="section" id="roles">
+        <div class="section__title">
+          <h2>نموذج الصلاحيات</h2>
+          <p>تحكم دقيق في الأدوار والمسؤوليات لضمان الحوكمة.</p>
+        </div>
+        <div class="role-cards" id="rolesGrid"></div>
+      </section>
+
+      <section class="section accent" id="backend">
+        <div class="section__title">
+          <h2>المنظومة الخلفية</h2>
+          <p>خدمات API جاهزة للتكامل مع الأنظمة المالية واللوجستية.</p>
+        </div>
+        <div class="backend-grid">
+          <div>
+            <h3>تسجيل الدخول الآمن</h3>
+            <p>جلسات عمل مؤمنة وتوثيق باستخدام رموز وصول.</p>
+          </div>
+          <div>
+            <h3>لوحة مؤشرات موحدة</h3>
+            <p>تجميع البيانات من المخازن، الأسطول، والمبيعات.</p>
+          </div>
+          <div>
+            <h3>حوكمة الصلاحيات</h3>
+            <p>مصفوفة أدوار واضحة مع إمكانية التوسع.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>© 2025 Heimon Fuel Co. جميع الحقوق محفوظة.</p>
+    </footer>
+
+    <div class="modal" id="loginModal" aria-hidden="true">
+      <div class="modal__content">
+        <button class="modal__close" id="closeLogin">×</button>
+        <h2>تسجيل الدخول إلى النظام</h2>
+        <p class="hint">استخدم بيانات تجريبية لإظهار الصلاحيات المختلفة.</p>
+        <form id="loginForm">
+          <label>
+            البريد الإلكتروني
+            <input type="email" name="email" required />
+          </label>
+          <label>
+            كلمة المرور
+            <input type="password" name="password" required />
+          </label>
+          <button type="submit" class="primary">دخول</button>
+        </form>
+        <div class="demo-users" id="demoUsers"></div>
+      </div>
+    </div>
+
+    <div class="modal" id="demoModal" aria-hidden="true">
+      <div class="modal__content">
+        <button class="modal__close" id="closeDemo">×</button>
+        <h2>عرض تجريبي مباشر</h2>
+        <div class="demo-content" id="demoContent"></div>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

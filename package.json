@@ -1,0 +1,15 @@
+{
+  "name": "heimon-erp",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Heimon ERP web app for a large fuel company.",
+  "type": "module",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "nanoid": "^5.0.7"
+  }
+}
